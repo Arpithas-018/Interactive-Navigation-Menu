@@ -1,39 +1,47 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    padding-top: 60px; /* Adjust for fixed header */
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ14KTmIUw-KBHRTPnpiJtC70Us9Nv5klNNg&s'); /* Apply background image to the entire body */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    color: #fff; /* Default text color to white for better contrast on the background image */
+    background-attachment: fixed;
 }
 
 header {
-    background-color: #333;
+    background-color: rgba(51, 51, 51, 0.8); /* Add some transparency to the header */
     color: white;
-    padding: 1em 0;
+    padding: 1em 20px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
-    box-shadow: 0 2px 5px rgba(236, 22, 22, 0.1);
-}
-
-header {
-    background-color: #333333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     transition: background-color 0.3s ease;
 }
-
 
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
-    text-align: center;
+    padding: 0 10px 0 30px; /* Add left padding here */
+    text-align: right;
 }
+
+
+
 
 nav ul li {
     display: inline;
-    margin: 0 1em;
+    margin-left: 1em;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
 }
 
 nav a {
@@ -41,130 +49,104 @@ nav a {
     text-decoration: none;
     padding: 0.5em 1em;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
     background-color: #555;
+    color: #eee;
+}
+
+.scrolled-nav {
+    background-color: rgba(85, 85, 85, 0.8); /* Adjust scrolled header transparency */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.scrolled-nav a {
+    color: white;
 }
 
 main {
-    padding-top: 4em;
-}
-
-section {
-    padding: 3em 2em;
+    padding: 2em;
     text-align: center;
     max-width: 960px;
     margin: 0 auto;
-}
-
-section h2 {
-    color: #333;
-    margin-bottom: 1em;
+    /* Optional: Add a background to the main content area for better readability */
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* border-radius: 8px; */
+    /* padding: 30px; */
 }
 
 .hero {
-    background-color: #e0f7fa;
+    padding: 6em 2em;
+    text-align: center;
+    /* Ensure text is readable on the background image */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: transparent; /* Make the hero section's own background transparent */
 }
 
-.about {
-    background-color: #fce4ec;
+.hero h1 {
+    margin-bottom: 0.5em;
+    font-size: 2.5em;
 }
 
-.services {
-    background-color: #e8f5e9;
+.hero p {
+    margin-bottom: 1.5em;
+    font-size: 1.2em;
 }
 
-.contact {
-    background-color: #fffde7;
+section {
+    padding: 4em 0;
+    text-align: center;
+    color: white; /* Default text color for other sections */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional text shadow for readability */
+    background-color: transparent; /* Make other section backgrounds transparent */
 }
+
+section h2 {
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+
+/* Style the text in other sections if needed */
+#about { /* No specific background color */ }
+#services { /* No specific background color */ }
+#contact { /* No specific background color */ }
 
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
     padding: 1em 0;
+    background-color: rgba(51, 51, 51, 0.8);
+    color: white;
     position: sticky;
     bottom: 0;
     width: 100%;
 }
 
-.learn-more-btn {
-    padding: 1em 2em;
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.team-image {
-    border-radius: 50%;
-}
-
-.contact-form {
-    max-width: 400px;
-    margin: 1em auto;
-    text-align: left;
-    padding: 1em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: white;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 0.5em;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-}
-
-.contact-form .submit-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 0.7em 1.5em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    padding-left: 2em;
-    text-align: right; /* 👈 align to the left */
-}
-
-
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
-    nav ul {
-        text-align: left;
+    header {
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: rgba(51, 51, 51, 0.9);
     }
-
+    nav ul {
+        text-align: center;
+        margin-top: 0.5em;
+        padding-left: 0;
+    }
     nav ul li {
         display: block;
         margin: 0.5em 0;
     }
-
-    main {
-        padding-top: 6em;
+    .hero {
+        padding: 4em 1em; /* Adjust padding for smaller screens */
     }
-
-    section {
-        padding: 2em 1em;
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1em;
     }
 }
